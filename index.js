@@ -1,11 +1,13 @@
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder, ChannelType } = require('discord.js');
 const fs = require('fs');
 const express = require('express');
+require('dotenv').config();
+
 
 // --- CONFIGURATIE ---
-const TOKEN = 'MTQ1MDg3Njc3NDc4NjI2OTI2NQ.GsVYC0.PkrOPlzEeTO0Qy-0YQ9HAjQAkLd8cKbsbYXQ-o';
-const CLIENT_ID = '1450876774786269265';
-const GUILD_ID = '1450859240058261624';
+const TOKEN = process.env.TOKEN;
+const CLIENT_ID = process.env.CLIENT_ID;
+const GUILD_ID = process.env.GUILD_ID;
 const REVIEW_CHANNEL_ID = '1450868280305782897';
 const STAFF_ROLE_ID = '1450859305598189719';
 const OFFERTE_LOG_ID = '1450913954900606998'; // Waar de staff de aanvragen ziet 
@@ -249,4 +251,4 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
